@@ -33,6 +33,10 @@ else
 	fi
 fi
 rm -f ${BASE}$$ ${BASE}$$.o ${BASE}$$.c
+
+# tirpc lib, modify cflags and libs as you need
+CFLAGS="${CFLAGS} $(pkg-config --cflags libtirpc)"
+LDLIBS="${LDLIBS} $(pkg-config --libs libtirpc)"
 	
 # check for IA64 HP-UX w/ HP's ANSI compiler; may need pointer swizzling
 arch=`echo $OS | awk -F- '{print $1;}'`
