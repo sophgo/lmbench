@@ -288,6 +288,11 @@ extern iter_t benchmp_interval(void* _state);
 extern int benchmp_childid();
 
 /*
+ * Show lmbench usage
+ */
+extern void lmbench_usage(int argc, char *argv[], char* usage);
+
+/*
  * harvest dead children to prevent zombies
  */
 extern void sigchld_wait_handler(int signo);
